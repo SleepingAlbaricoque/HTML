@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 필드에 입력 커서 표시하기</title>
+    <style>
+        body {
+            background-color:#fff; 
+        }
+        form fieldset{
+            margin-bottom:25px; 
+        }
+        form legend{
+            font-size:15px;
+            font-weight:600; 
+        }
+        form label.reg {
+            font-size:14px;
+            width:110px;
+            color:#390;
+            font-weight:bold;		
+            float:left;
+            text-align:right;
+            margin-right:10px;
+        }
+        form ul li{
+            list-style:none; 
+            margin: 15px 0;	
+            font-size:14px;	
+        } 
+
+        #member, #stuffs {
+            width:50px; 
+        }
+     </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>영어회화(초급)</legend>
+            <ul> 
+                <li>   
+                    <label class="reg" for="subj">영어회화(초급)</label>
+                    <input type="text" id="subj" value="오전 9:00~11:00" readonly>
+                </li>   
+            </ul>        
+        </fieldset>
+        <fieldset>
+            <legend>신청자</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="name">이름</label>
+                    <input type="text" id="name" autofocus required>
+                </li>
+                <li>
+                    <label class="reg" for="uid">학번</label>
+                    <input type="text" id="uid" placeholder="하이픈없이 입력">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
