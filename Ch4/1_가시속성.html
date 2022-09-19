@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1_가시속성</title>
+    <!--
+        날짜 : 2022.09.19
+        이름 : 조수빈
+        내용 : CSS 가시속성 실습하기
+
+        가시속성(display)
+        display: none
+         - 태그요소를 브라우저 화면에서 제거
+         - visibility: hidden은 자리 공간 남음
+
+        display: block
+        - 태그요소를 block 형식으로 변환
+        - 세로방향 출력, width/height 적용
+
+        display: inline
+        - 태그요소를 inline 형식으로 변환
+        - 가로방향 출력, width/height 적용 안됨
+
+        display: inline-block
+        - 태그요소를 inline-block 형식으로 변환
+        - 가로방향 출력, width/height 적용 
+
+
+    -->
+    <style>
+        div > span {background: orange;}
+        div > div {background: green;}
+
+        .box1 > span:first-child {display: none;} /* 그 자리에 존재하지 않았던 것 처럼 사라짐 */
+        .box1 > span:nth-child(2) {visibility: hidden;} /* 사라지지만 원래 차지했던 공간은 그대로 남아있음 */
+
+        .box2 > span:nth-child(2) {display: block;} /* html의 div 태그와 역할 똑같음 */
+
+        .box3 > div:nth-child(2) { /* html의 span 태그와 역할 똑같음 */
+            display: inline;
+            width: 100px; /* inline는 크기 조정 불가 */
+        } 
+
+        .box4 > div { /* 크기 조절 가능, 가로 방향으로 진행 */
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        } 
+    </style>
+</head>
+<body>
+    <h3>가시속성</h3>
+
+    <h4>display:none</h4>
+    <div class="box1">
+        <span>TEXT1</span>
+        <span>TEXT2</span>
+        <span>TEXT3</span>
+    </div>
+    
+    <h4>display:block</h4>
+    <div class="box2">
+        <span>TEXT1</span>
+        <span>TEXT2</span>
+        <span>TEXT3</span>
+    </div>
+
+    <h4>display:inline</h4>
+    <div class="box3">
+        <span>TEXT1</span>
+        <div>TEXT2</div>
+        <span>TEXT3</span>
+    </div>
+    <h4>display:inline-block</h4>
+    <div class="box4">
+        <span>TEXT1</span>
+        <div>TEXT2</div>
+        <span>TEXT3</span>
+    </div>
+</body>
+</html>
