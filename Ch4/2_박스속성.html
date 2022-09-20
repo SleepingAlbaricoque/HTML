@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_박스속성</title>
+    <!--
+        날짜 : 2022.09.20
+        이름 : 조수빈
+        내용 : 박스속성 실습하기
+
+        width, height
+         - block, inline-block 태그의 가로, 세로 크기 지정
+         - px, % 단위 사용
+    
+        padding, margin
+         - padding: 안쪽 여백
+         - margin: 바깥쪽 여백
+
+        border
+         - 태그의 테두리
+         - border: 크기 모양 색 순서로 지정
+
+        box-sizing
+         - 고정된 width, height 크기에서 padding, border 적용하게 함
+         - padding, border 속성과 함께 사용
+    -->
+    <style>
+        div {
+            display: inline-block; /* 가로 정렬, inline-block이라 블럭 단위로 가로 정렬 */
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+
+        section:nth-of-type(1) > div:nth-child(1) {
+            width: 50px; 
+            height: 50px;
+        }
+
+        section:nth-of-type(1) > div:nth-child(2) {
+            width: 10%; /* 부모인 section:nth-of-type(1) width의 10%; 부모는 section이므로 현재 브라우저 창 화면의 가로폭과 같음 */
+            height: 100px;
+            /* height는 %로 주는 것 안됨 <- 웹페이지의 높이는 확정 불가x <- 실시간으로 스크롤 생성해 계속 로딩 */
+        }
+
+        section:nth-of-type(2) > div:nth-child(1) {
+            padding: 10px; /* 안쪽 여백 */
+            margin: 10px;  /* 바깥쪽 여백 */
+        }
+
+        section:nth-of-type(2) > div:nth-child(2) {
+            padding: 10px 20px; /* 각각 가로, 세로 */
+            margin: 10px 20px;
+        }
+        section:nth-of-type(2) > div:nth-child(3) {
+            padding: 10px 20px 30px; /* 각각 위, 세로, 아래 */
+            margin: 10px 20px 30px;
+        }
+        section:nth-of-type(2) > div:nth-child(4) {
+            padding: 10px 20px 30px 40px; /* 각각 위, 오른쪽, 아래, 왼쪽 */
+            margin: 10px 20px 30px 40px;
+        }
+        section:nth-of-type(2) > div:nth-child(5) {
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 40px;
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-bottom: 30px;
+            margin-left: 40px;
+        }
+        section:nth-of-type(2) > div:nth-child(6) {
+            display: block; /* 위에 까지는 inline-block 이라 가로 정렬이었는데 block으로 설정해서 이것만 다음 줄로 넘어가 세로 정렬 */
+            margin: 0 auto; /* 블럭이 창 가운데 정렬 항상 */
+        }
+
+        section:nth-of-type(3) > div:nth-child(1) {
+            border-width: 1px;
+            border-style: dotted;
+            border-color: red;
+        }
+        section:nth-of-type(3) > div:nth-child(2) {
+            border: 1px solid red;
+        }
+        section:nth-of-type(3) > div:nth-child(3) {
+            border: 2px dashed black;
+        }
+
+        section:nth-of-type(4) > div:nth-child(1) {
+            padding: 12px; /* 여백 크기만큼 원래 블럭 크기가 늘어남 */
+            box-sizing: border-box; /* 원래 블럭 크기로 고정하고 그 안에서 padding 여백 확보 */
+        }
+        section:nth-of-type(4) > div:nth-child(2) {
+            border: 2px solid black; /* 테두리 2px이 붙어서 원래 크기에서 총 4px 증가 */
+            box-sizing: border-box;
+        }
+        section:nth-of-type(4) > div:nth-child(3) {
+            padding: 6px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h3>박스속성</h3>
+
+    <h4>width, height 속성</h4>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </section>
+
+    <h4>margin, padding 속성</h4>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </section>
+
+    <h4>border 속성</h4>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </section>
+
+    <h4>box-sizing 속성</h4>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </section>
+</body>
+</html>
