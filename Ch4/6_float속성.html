@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>6_float속성</title>
+    <!--
+        날짜 : 2022.09.21
+        이름 : 조수빈
+        내용 : float 속성 실습하기
+
+        float
+         - 태그요소를 부모영역에서 띄워 왼쪽, 오른쪽으로 배치하는 속성
+         - block 태그요소를 가로 정렬에 많이 사용
+        
+        clear
+         - floating 된 태그요소를 현재 방향(left, right)에서 해제 후 새로운 방향에 배치
+        
+        float - overflow 관계 설정
+         - floating 된 태그요소의 부모태그에 overflow: hidden 으로 공간 설정
+    -->
+
+    <style>
+        .box1, .box2 { /* 쉼표가 없으면 box1의 자손 box2를 호출하는 문장이 됨 */
+            width: 800px;
+            height: 400px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        div > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            background: cadetblue;
+        }
+
+        .box1 > div:nth-child(1) {float: left;}
+        .box1 > div:nth-child(2) {float: left;} /* 1번 바로 옆에 가서 붙는다 */
+        .box1 > div:nth-child(3) {float: left;}
+        .box1 > div:nth-child(4) {float: right;}
+        .box1 > div:nth-child(5) {float: right;}
+        .box1 > div:nth-child(6) {float: left;}
+
+        .box2 > div:nth-child(1) {float: left;}
+        .box2 > div:nth-child(2) {float: left; clear: left;} /* 1, 2, 3, 4, 8, 7, 6, 5 이렇게 한 줄로 붙어있었는데 2번 왼쪽 옆을 클리어 하면 2부터 밑 줄로 내려옴 */
+        .box2 > div:nth-child(3) {float: left;}
+        .box2 > div:nth-child(4) {float: left; clear: left;}
+        .box2 > div:nth-child(5) {float: right;}
+        .box2 > div:nth-child(6) {float: right;}
+        .box2 > div:nth-child(7) {float: right;}
+        .box2 > div:nth-child(8) {float: right; clear: both;}
+
+        .box3 {
+            width: 800px;
+            height: auto; /* box3 내용의 높이만큼 높이겠다는 뜻; box3 내용은 box3의 자식 div1 ~ 6까지 */
+            border: 1px solid black;
+            box-sizing: border-box;
+            overflow: hidden; /* 자식이 모두 float해도 부모 영역 높이가 0이 되지 않도록 하기 위한 설정; 높이 auto로 설정했기 때문 */
+        }
+
+        .box3 > div:nth-child(1) {float: left;} /* box3 높이는 500으로 줄어듦 */
+        .box3 > div:nth-child(2) {float: left;} /* 400으로 줄어듦 */
+        .box3 > div:nth-child(3) {float: left;}
+        .box3 > div:nth-child(4) {float: left;}
+        .box3 > div:nth-child(5) {float: left;}
+        .box3 > div:nth-child(6) {float: left;}
+    </style>
+</head>
+<body>
+    <h3>float 속성</h3>
+
+    <div class="box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <div class="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <div class="box3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>
