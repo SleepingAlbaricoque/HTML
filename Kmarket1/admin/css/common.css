@@ -77,6 +77,25 @@ main > section > nav > p > strong{
     font-weight: bold;
 }
 
+main table {
+    width: 100%;
+    border-collapse: collapse;
+}
+main table tr > td {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px;
+    text-align: left;
+}
+main table tr > td:nth-child(1) {
+    width: 160px;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background: #f6f6f6;
+    padding: 10px;
+    text-align: left;
+}
+
 /* footer */
 footer{
     width: 100%;
