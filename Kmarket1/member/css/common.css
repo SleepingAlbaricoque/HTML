@@ -62,7 +62,24 @@ header > .top > div > a:hover{
     text-rendering: auto;
     line-height: 1;
 }
-.fa, .far, .fas {
+.fa-circle-check::before{
+    content: "\f058";
+    color: ##0e6ad3;
+}
+.fa-solid {
+    font-family: "Font Awesome 5 Free";
+}
+.fa-solid{font-weight: 900;}
+.fa-solid{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+.fa-solid {
     font-family: "Font Awesome 5 Free";
 }
 
